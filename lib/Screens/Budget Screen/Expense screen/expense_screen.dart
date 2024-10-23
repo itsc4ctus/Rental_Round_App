@@ -73,7 +73,7 @@ class _ExpenseScreenState extends State<ExpenseScreen> {
                 );
                 setState(() {});
               },
-              icon: Icon(Icons.close))
+              icon: const Icon(Icons.close))
         ],
       ),
       body: SingleChildScrollView(

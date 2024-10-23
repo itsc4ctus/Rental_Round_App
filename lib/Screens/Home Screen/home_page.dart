@@ -5,18 +5,15 @@ import 'package:rentel_round/Screens/Home%20Screen/settingsScreen.dart';
 import 'package:rentel_round/Services/car_services.dart';
 import '../../Models/auth_model.dart';
 import '../../Models/car_model.dart';
-import '../../Notification/notificationServices.dart';
 import '../Car Screen/Car Service/Car_Service.dart';
 import '../Car Screen/View Car/viewcar_screen.dart';
 import '../Car Screen/car_tile.dart';
 import '../Car Screen/Edit Car/editcar_screen.dart';
-import '../Drawer Screens/about_app.dart';
-import '../Drawer Screens/privacy_policy.dart';
 import '../Drawer Screens/profile_screen.dart';
 
 class HomePage extends StatefulWidget {
   final Auth auth;
-  HomePage({required this.auth, super.key});
+  const HomePage({required this.auth, super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -36,7 +33,7 @@ class _HomePageState extends State<HomePage> {
   bool manualSelected = false;
   bool avCar = false;
   int selectedSeats = 0;
-  RangeValues _rangeValues = RangeValues(0, 10000);
+  RangeValues _rangeValues = const RangeValues(0, 10000);
   bool filterColor = false;
   @override
   void initState() {
@@ -192,7 +189,7 @@ class _HomePageState extends State<HomePage> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
                       const Text("FUEL TYPE"),
@@ -245,7 +242,7 @@ class _HomePageState extends State<HomePage> {
                         ),
                         child: Column(
                           children: [
-                            SizedBox(
+                            const SizedBox(
                               height: 10,
                             ),
                             filterItems.filterFeild(
@@ -270,12 +267,12 @@ class _HomePageState extends State<HomePage> {
                       Container(
                         child: Column(
                           children: [
-                            Text("PRICE RANGE"),
+                            const Text("PRICE RANGE"),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(_rangeValues.start.round().toString()),
-                                Text("  -  "),
+                                const Text("  -  "),
                                 Text(_rangeValues.end.round().toString()),
                               ],
                             ),
@@ -315,7 +312,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                       const SizedBox(height: 10),
                       const Text("NUMBER OF SEATS"),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Row(
@@ -365,13 +362,13 @@ class _HomePageState extends State<HomePage> {
                           }, "", tempSelectedSeats == 6),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          SizedBox(
+                          const SizedBox(
                             width: 5,
                           ),
                           ElevatedButton(
@@ -395,20 +392,20 @@ class _HomePageState extends State<HomePage> {
                                   manualSelected = false;
                                   avCar = false;
                                   selectedSeats = 0;
-                                  _rangeValues = RangeValues(0, 10000);
+                                  _rangeValues = const RangeValues(0, 10000);
                                 });
                                 _applyFilters();
                                 Navigator.pop(context);
                                 FocusScope.of(context).unfocus();
                               },
-                              child: Text("RESET")),
+                              child: const Text("RESET")),
                           ElevatedButton(
                               onPressed: () {
                                 Navigator.pop(context);
                                 FocusScope.of(context).unfocus();
                               },
-                              child: Text("APPLY")),
-                          SizedBox(
+                              child: const Text("APPLY")),
+                          const SizedBox(
                             width: 5,
                           ),
                         ],
@@ -474,7 +471,7 @@ class _HomePageState extends State<HomePage> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => CarServiceScreen(),
+                                  builder: (context) => const CarServiceScreen(),
                                 ));
                           },
                           leading: const Icon(Icons.car_repair_rounded),
@@ -490,8 +487,8 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                 ));
                           },
-                          leading: Icon(CupertinoIcons.settings_solid),
-                          title: Text("Settings"),
+                          leading: const Icon(CupertinoIcons.settings_solid),
+                          title: const Text("Settings"),
                         ),
                       ],
                     ),

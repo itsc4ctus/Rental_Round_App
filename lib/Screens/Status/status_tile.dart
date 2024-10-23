@@ -44,7 +44,7 @@ class _StatusTileState extends State<StatusTile> {
   bool isCompleted = false;
   Future<void> calculateNoOfDays() async {
     int noDay =
-        await widget.Status.endDate.difference(widget.Status.startDate).inDays;
+        widget.Status.endDate.difference(widget.Status.startDate).inDays;
 
     print("calculated");
     setState(() {});

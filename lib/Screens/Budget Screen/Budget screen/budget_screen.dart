@@ -16,14 +16,14 @@ import '../../../Models/workshop_model.dart';
 
 class BudgetScreen extends StatefulWidget {
   final Auth auth;
-  BudgetScreen({required this.auth, super.key});
+  const BudgetScreen({required this.auth, super.key});
 
   @override
   State<BudgetScreen> createState() => _BudgetScreenState();
 }
 
 class _BudgetScreenState extends State<BudgetScreen> {
-  DateTime _startDate = DateTime.now().subtract(Duration(days: 30));
+  DateTime _startDate = DateTime.now().subtract(const Duration(days: 30));
   DateTime _endDate = DateTime.now();
   int totalIncome = 0;
   int totalExpense = 0;
@@ -50,7 +50,7 @@ class _BudgetScreenState extends State<BudgetScreen> {
     CStatusList = CStatusList.reversed.toList();
     for (var Status in CStatusList) {
       if (Status.startDate.isAfter(_startDate) &&
-          Status.endDate.isBefore(_endDate.add(Duration(days: 1)))) {
+          Status.endDate.isBefore(_endDate.add(const Duration(days: 1)))) {
         totalIncome = totalIncome + Status.amountReceived;
       }
     }
@@ -58,14 +58,14 @@ class _BudgetScreenState extends State<BudgetScreen> {
         await WorkshopServices().getCompletedForExp();
     for (var work in workshopList) {
       if (work.dateTime.isAfter(_startDate) &&
-          work.dateTime.isBefore(_endDate.add(Duration(days: 1)))) {
+          work.dateTime.isBefore(_endDate.add(const Duration(days: 1)))) {
         totalServiceCharges = totalServiceCharges + work.serviceAmount;
       }
     }
     List<expenses> expList = await ExpenceServices().getExpenses();
     for (var expense in expList) {
       if (expense.dateTime.isAfter(_startDate) &&
-          expense.dateTime.isBefore(_endDate.add(Duration(days: 1)))) {
+          expense.dateTime.isBefore(_endDate.add(const Duration(days: 1)))) {
         totalOtherExp = totalOtherExp + expense.expenceAmt;
       }
     }
@@ -77,11 +77,11 @@ class _BudgetScreenState extends State<BudgetScreen> {
   void dropdownPicker(String newPeriod) {
     setState(() {
       if (newPeriod == "Last 7 days") {
-        _startDate = DateTime.now().subtract(Duration(days: 7));
+        _startDate = DateTime.now().subtract(const Duration(days: 7));
       } else if (newPeriod == "Last one month") {
-        _startDate = DateTime.now().subtract(Duration(days: 30));
+        _startDate = DateTime.now().subtract(const Duration(days: 30));
       } else if (newPeriod == "Last year") {
-        _startDate = DateTime.now().subtract(Duration(days: 365));
+        _startDate = DateTime.now().subtract(const Duration(days: 365));
       }
       _endDate = DateTime.now();
       _loadCompletedStatus();
@@ -111,12 +111,12 @@ class _BudgetScreenState extends State<BudgetScreen> {
                 child: Text("BUDGET TRACKER"),
               ),
               Container(
-                  padding: EdgeInsets.all(2),
-                  margin: EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(2),
+                  margin: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
                       border: Border.all(),
                       borderRadius: BorderRadius.circular(10)),
-                  child: Container(
+                  child: SizedBox(
                     width: kIsWeb ? screenWidth * 0.7 : null,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -126,7 +126,7 @@ class _BudgetScreenState extends State<BudgetScreen> {
                             showDialog(
                               context: context,
                               builder: (context) => AlertDialog(
-                                title: Text("SELECT PERIOD"),
+                                title: const Text("SELECT PERIOD"),
                                 actions: [
                                   Container(
                                     child: Row(
@@ -157,12 +157,12 @@ class _BudgetScreenState extends State<BudgetScreen> {
                               child: Row(
                             children: [
                               ViewCarTiles().viewDateTwo(_startDate),
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
+                              const Padding(
+                                padding: EdgeInsets.all(8.0),
                                 child: Text("To"),
                               ),
                               ViewCarTiles().viewDateTwo(_endDate),
-                              Icon(Icons.arrow_drop_down),
+                              const Icon(Icons.arrow_drop_down),
                             ],
                           )),
                         ),

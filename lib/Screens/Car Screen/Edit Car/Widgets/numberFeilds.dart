@@ -37,7 +37,7 @@ class InputFeilds extends StatelessWidget {
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
           label: Text(
             label,
-            style: TextStyle(fontFamily: "Roboto"),
+            style: const TextStyle(fontFamily: "Roboto"),
           ),
         ),
       ),

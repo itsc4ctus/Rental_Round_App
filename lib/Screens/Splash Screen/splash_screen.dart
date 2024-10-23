@@ -36,7 +36,7 @@ class _SplashScreenState extends State<SplashScreen> {
   Future<void> _navigateToNewToHome() async {
     await Future.delayed(const Duration(seconds: 3));
     Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) => NewToHome()));
+        context, MaterialPageRoute(builder: (context) => const NewToHome()));
   }
 
   Future<void> _navigateToRentalRound(Auth auth) async {

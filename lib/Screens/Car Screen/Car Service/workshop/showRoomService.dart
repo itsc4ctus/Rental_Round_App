@@ -1,14 +1,12 @@
 import 'dart:io';
 import 'package:file_picker/file_picker.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
 import 'package:image_picker/image_picker.dart';
 
 class ShowRoomService extends StatefulWidget {
-  ShowRoomService(
+  const ShowRoomService(
       {required this.phoneNumber, required this.shopName, super.key});
   final int phoneNumber;
   final String shopName;
@@ -20,7 +18,7 @@ class ShowRoomService extends StatefulWidget {
 class _ShowRoomServiceState extends State<ShowRoomService> {
   TextEditingController showRoomAmountController = TextEditingController();
   TextEditingController notecontroller = TextEditingController();
-  GlobalKey<FormState> _key = GlobalKey();
+  final GlobalKey<FormState> _key = GlobalKey();
   XFile? billimage;
   Uint8List? webBillImage;
   final ImagePicker _picker = ImagePicker();
@@ -50,7 +48,7 @@ class _ShowRoomServiceState extends State<ShowRoomService> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Showroom Service",
+        title: const Text("Showroom Service",
             style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600)),
         centerTitle: true,
       ),
@@ -64,7 +62,7 @@ class _ShowRoomServiceState extends State<ShowRoomService> {
               children: [
                 // Garage Information
                 Container(
-                  padding: EdgeInsets.all(20),
+                  padding: const EdgeInsets.all(20),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
                   ),
@@ -77,24 +75,24 @@ class _ShowRoomServiceState extends State<ShowRoomService> {
                             fontWeight: FontWeight.bold,
                             color: Colors.grey[700]),
                       ),
-                      SizedBox(height: 5),
+                      const SizedBox(height: 5),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text("Phone:"),
+                          const Text("Phone:"),
                           Text(
                             widget.phoneNumber.toString(),
                             style:
-                                TextStyle(fontSize: 16, color: Colors.blueGrey),
+                                const TextStyle(fontSize: 16, color: Colors.blueGrey),
                           ),
                         ],
                       ),
                     ],
                   ),
                 ),
-                SizedBox(height: 30),
+                const SizedBox(height: 30),
                 Container(
-                  padding: EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
                     color: Colors.grey[200],
                     borderRadius: BorderRadius.circular(15),
@@ -110,7 +108,7 @@ class _ShowRoomServiceState extends State<ShowRoomService> {
                         ),
                         child: kIsWeb
                             ? (webBillImage == null
-                                ? Center(
+                                ? const Center(
                                     child: Text("Add Bill Image",
                                         style: TextStyle(color: Colors.grey)))
                                 : ClipRRect(
@@ -118,7 +116,7 @@ class _ShowRoomServiceState extends State<ShowRoomService> {
                                     child: Image.memory(webBillImage!),
                                   ))
                             : (billimage == null
-                                ? Center(
+                                ? const Center(
                                     child: Text("Add Bill Image",
                                         style: TextStyle(color: Colors.grey)))
                                 : ClipRRect(
@@ -129,11 +127,11 @@ class _ShowRoomServiceState extends State<ShowRoomService> {
                                     ),
                                   )),
                       ),
-                      SizedBox(height: 10),
+                      const SizedBox(height: 10),
                       ElevatedButton.icon(
                         onPressed: _picKImage,
-                        icon: Icon(Icons.photo_camera),
-                        label: Text("Add Bill Photo"),
+                        icon: const Icon(Icons.photo_camera),
+                        label: const Text("Add Bill Photo"),
                         style: ElevatedButton.styleFrom(
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8),
@@ -143,14 +141,14 @@ class _ShowRoomServiceState extends State<ShowRoomService> {
                     ],
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Container(
                   width: screenWidth * 0.9,
-                  padding: EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(15),
-                    boxShadow: [
+                    boxShadow: const [
                       BoxShadow(
                         color: Colors.black12,
                         blurRadius: 10,
@@ -159,7 +157,7 @@ class _ShowRoomServiceState extends State<ShowRoomService> {
                   ),
                   child: Column(
                     children: [
-                      Text("Service Note"),
+                      const Text("Service Note"),
                       TextFormField(
                         validator: (value) {
                           if (value == null || value.isEmpty) {
@@ -170,7 +168,7 @@ class _ShowRoomServiceState extends State<ShowRoomService> {
                         autovalidateMode: AutovalidateMode.onUserInteraction,
                         controller: notecontroller,
                         maxLines: 5,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           hintText: "Add any notes here...",
                           contentPadding: EdgeInsets.symmetric(
                               vertical: 20.0, horizontal: 15.0),
@@ -180,11 +178,11 @@ class _ShowRoomServiceState extends State<ShowRoomService> {
                     ],
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Container(
                   child: Column(
                     children: [
-                      Text("Add Serviced amount"),
+                      const Text("Add Serviced amount"),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20.0),
                         child: TextFormField(
@@ -209,14 +207,14 @@ class _ShowRoomServiceState extends State<ShowRoomService> {
                           ),
                         ),
                       ),
-                      SizedBox(height: 15),
+                      const SizedBox(height: 15),
                       ElevatedButton(
                         onPressed: () {
                           if (kIsWeb
                               ? webBillImage == null
                               : billimage == null) {
                             ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(content: Text("Add bill image")));
+                                const SnackBar(content: Text("Add bill image")));
                           } else {
                             if (_key.currentState!.validate()) {
                               final data = {
@@ -230,14 +228,14 @@ class _ShowRoomServiceState extends State<ShowRoomService> {
                             }
                           }
                         },
-                        child: Text("ADD"),
                         style: ElevatedButton.styleFrom(
-                          padding: EdgeInsets.symmetric(
+                          padding: const EdgeInsets.symmetric(
                               vertical: 14.0, horizontal: 30.0),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10),
                           ),
                         ),
+                        child: const Text("ADD"),
                       ),
                     ],
                   ),

@@ -15,7 +15,7 @@ import '../../Models/auth_model.dart';
 
 class ProfileScreen extends StatefulWidget {
   final Auth auth;
-  ProfileScreen({required this.auth, super.key});
+  const ProfileScreen({required this.auth, super.key});
 
   @override
   State<ProfileScreen> createState() => _ProfileScreenState();
@@ -45,7 +45,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                     ));
               },
-              icon: Icon(Icons.edit_rounded))
+              icon: const Icon(Icons.edit_rounded))
         ],
       ),
       body: Center(
@@ -99,11 +99,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => NewToHome(),
+                            builder: (context) => const NewToHome(),
                           ));
                     }, context);
                   },
-                  child: Text("LOGOUT"))
+                  child: const Text("LOGOUT"))
             ],
           ),
         ),

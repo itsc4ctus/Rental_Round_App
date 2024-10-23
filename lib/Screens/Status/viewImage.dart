@@ -12,7 +12,7 @@ class ViewImage extends StatelessWidget {
       appBar: AppBar(),
       backgroundColor: Colors.white,
       body: Center(
-        child: Container(
+        child: SizedBox(
           height: 350,
           width: 350,
           child: InteractiveViewer(child: Image(image: FileImage(File(image)))),

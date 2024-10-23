@@ -70,7 +70,7 @@ class _CarServiceScreenState extends State<CarServiceScreen> {
     List options = [
       Container(
         child: ServicableCars.isEmpty
-            ? Center(
+            ? const Center(
                 child: Text("No cars to display!"),
               )
             : ListView.builder(
@@ -84,7 +84,7 @@ class _CarServiceScreenState extends State<CarServiceScreen> {
                   onService: (phoneNumber, showRoomName) {
                     service(ServicableCars[index], phoneNumber, showRoomName);
                     Navigator.pop(context);
-                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                         backgroundColor: Colors.blue,
                         content: Text("Car added for service!")));
                   },
@@ -94,7 +94,7 @@ class _CarServiceScreenState extends State<CarServiceScreen> {
       ),
       Container(
         child: ServicableCars.isEmpty
-            ? Center(
+            ? const Center(
                 child: Text("No cars are currently on service!"),
               )
             : ListView.builder(

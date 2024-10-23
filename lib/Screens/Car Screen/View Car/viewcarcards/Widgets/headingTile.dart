@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 
 class headingTile extends StatelessWidget {
   final String heading;
-  headingTile({
+  const headingTile({
     required this.heading,
     super.key,
   });
@@ -11,7 +11,7 @@ class headingTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       heading,
-      style: TextStyle(
+      style: const TextStyle(
         fontSize: 14,
         color: Color(0xFF1E3A8A),
         fontWeight: FontWeight.w500,

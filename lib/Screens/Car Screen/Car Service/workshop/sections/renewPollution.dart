@@ -34,7 +34,7 @@ class renewPollutionSection extends StatelessWidget {
           Card(
             elevation: 2,
             child: Container(
-              padding: EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   color: Colors.blue.shade900),
@@ -47,7 +47,7 @@ class renewPollutionSection extends StatelessWidget {
               ),
             ),
           ),
-          Text("RENEW\nPOLLUTION")
+          const Text("RENEW\nPOLLUTION")
         ],
       ),
     );

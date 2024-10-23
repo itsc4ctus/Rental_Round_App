@@ -4,20 +4,20 @@ class filterItems {
   static Widget filterFeild(
       String feildName, bool value, Function(bool?) function) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        Container(
+        SizedBox(
+          height: 40,
+          width: 200,
           child: Text(
             feildName,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 20,
             ),
           ),
-          height: 40,
-          width: 200,
         ),
         Container(child: Checkbox(value: value, onChanged: function)),
       ],
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
     );
   }
 
@@ -33,7 +33,7 @@ class filterItems {
         ),
         height: 40,
         width: 40,
-        child: Center(child: Text("${seat}$plus")),
+        child: Center(child: Text("$seat$plus")),
       ),
     );
   }

@@ -18,7 +18,7 @@ class BottomSheetCarTile extends StatelessWidget {
   final String brandName;
   final String carType;
 
-  BottomSheetCarTile({
+  const BottomSheetCarTile({
     super.key,
     required this.carName,
     required this.vehicleNo,

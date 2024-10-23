@@ -19,7 +19,7 @@ class totalAmountWidget extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Text("TOTAL AMOUNT:"),
+          const Text("TOTAL AMOUNT:"),
           Container(
             transformAlignment: AlignmentDirectional.bottomCenter,
             child: Text("₹ ${showRoomAmount.toString()}"),

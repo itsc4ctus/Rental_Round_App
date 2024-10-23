@@ -152,7 +152,7 @@ class _AddScreenState extends State<AddScreen> {
       },
       child: Scaffold(
         appBar: AppBar(
-          title: Text("ADD NEW CUSTOMER"),
+          title: const Text("ADD NEW CUSTOMER"),
           centerTitle: true,
         ),
         backgroundColor: Colors.white,
@@ -335,7 +335,7 @@ class _AddScreenState extends State<AddScreen> {
                     Row(
                       children: [
                         const Text("Select End Date:"),
-                        SizedBox(
+                        const SizedBox(
                           width: 10,
                         ),
                         ElevatedButton(
@@ -350,9 +350,9 @@ class _AddScreenState extends State<AddScreen> {
                                   height: 250,
                                   child: CupertinoDatePicker(
                                     minimumDate:
-                                        DateTime.now().add(Duration(days: 1)),
+                                        DateTime.now().add(const Duration(days: 1)),
                                     initialDateTime:
-                                        DateTime.now().add(Duration(days: 1)),
+                                        DateTime.now().add(const Duration(days: 1)),
                                     onDateTimeChanged: (DateTime newDate) {
                                       setState(() {
                                         displayDate = newDate;
@@ -522,7 +522,7 @@ class _AddScreenState extends State<AddScreen> {
                 padding: const EdgeInsets.all(15.0),
                 child: TextFormField(
                   controller: searchController,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                       border: OutlineInputBorder(),
                       prefixIcon: Icon(CupertinoIcons.search_circle)),
                 ),

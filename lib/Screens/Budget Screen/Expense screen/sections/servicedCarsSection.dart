@@ -1,10 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../Models/expences_model.dart';
-import '../../../../Models/workshop_model.dart';
 import '../otherExpenseTile.dart';
-import '../workshopTile.dart';
 
 class addOtherExpenseWidget extends StatelessWidget {
   const addOtherExpenseWidget({
@@ -56,7 +53,7 @@ class addOtherExpenseWidget extends StatelessWidget {
                 const Divider(),
                 Expanded(
                   child: otherExpList.isEmpty
-                      ? Center(
+                      ? const Center(
                           child: Text("Add expenses to display here!"),
                         )
                       : ListView.builder(

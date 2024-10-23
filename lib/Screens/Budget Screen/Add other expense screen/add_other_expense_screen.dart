@@ -44,7 +44,7 @@ class _OtherExpScreenState extends State<OtherExpScreen> {
                         builder: (context) => ExpenseScreen(auth: widget.auth),
                       ));
                 },
-                icon: Icon(Icons.close))
+                icon: const Icon(Icons.close))
           ],
         ),
         body: Center(
@@ -61,6 +61,7 @@ class _OtherExpScreenState extends State<OtherExpScreen> {
                       if (value!.isEmpty) {
                         return "Enter the feild";
                       }
+                      return null;
                     },
                     controller: expNameController,
                     decoration: const InputDecoration(
@@ -76,6 +77,7 @@ class _OtherExpScreenState extends State<OtherExpScreen> {
                       if (value!.isEmpty) {
                         return "Enter the feild";
                       }
+                      return null;
                     },
                     keyboardType: TextInputType.number,
                     autovalidateMode: AutovalidateMode.onUserInteraction,

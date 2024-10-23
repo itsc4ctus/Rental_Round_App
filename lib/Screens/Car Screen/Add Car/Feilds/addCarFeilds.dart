@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -17,7 +16,7 @@ class AddCarFeilds {
       validator: validator ??
           (value) {
             if (value == null || value == "") {
-              return "$errorMsg";
+              return errorMsg;
             }
             return null;
           },
@@ -31,10 +30,10 @@ class AddCarFeilds {
           fontFamily: 'Roboto',
         ),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
-        hintText: "$hintText",
+        hintText: hintText,
         label: Text(
-          "$labelName",
-          style: TextStyle(fontFamily: "Roboto"),
+          labelName,
+          style: const TextStyle(fontFamily: "Roboto"),
         ),
       ),
     );
@@ -53,7 +52,7 @@ class AddCarFeilds {
       validator: validator ??
           (value) {
             if (value == null || value == "") {
-              return "$errorMsg";
+              return errorMsg;
             }
             return null;
           },
@@ -68,8 +67,8 @@ class AddCarFeilds {
         ),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
         label: Text(
-          "$labelName",
-          style: TextStyle(fontFamily: "Roboto"),
+          labelName,
+          style: const TextStyle(fontFamily: "Roboto"),
         ),
       ),
     );

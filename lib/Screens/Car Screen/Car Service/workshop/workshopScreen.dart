@@ -17,7 +17,7 @@ import '../../../../Services/car_services.dart';
 import '../../../../Services/expence_services.dart';
 
 class WorkShopScreen extends StatefulWidget {
-  WorkShopScreen({required this.car, required this.inTake, super.key});
+  const WorkShopScreen({required this.car, required this.inTake, super.key});
 
   final Cars car;
   final WorKShopModel inTake;
@@ -83,7 +83,7 @@ class _WorkShopScreenState extends State<WorkShopScreen> {
     var screenWidth = size.width;
     return Scaffold(
       appBar: AppBar(
-        title: Text("Workshop"),
+        title: const Text("Workshop"),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -110,7 +110,7 @@ class _WorkShopScreenState extends State<WorkShopScreen> {
                             Card(
                               elevation: 2,
                               child: Container(
-                                padding: EdgeInsets.all(10),
+                                padding: const EdgeInsets.all(10),
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10),
                                     color: Colors.blue.shade900),
@@ -127,7 +127,7 @@ class _WorkShopScreenState extends State<WorkShopScreen> {
                                       Icons.car_repair_outlined,
                                       color: Colors.white,
                                     ),
-                                    Text(
+                                    const Text(
                                       "ENTER SHOW ROOM",
                                       style: TextStyle(
                                         color: Colors.white,
@@ -142,8 +142,8 @@ class _WorkShopScreenState extends State<WorkShopScreen> {
                       ),
                     ],
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
+                  const Padding(
+                    padding: EdgeInsets.all(8.0),
                     child: Divider(
                       color: Colors.black,
                     ),
@@ -161,7 +161,7 @@ class _WorkShopScreenState extends State<WorkShopScreen> {
                             Card(
                               elevation: 2,
                               child: Container(
-                                padding: EdgeInsets.all(10),
+                                padding: const EdgeInsets.all(10),
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10),
                                     color: Colors.blue.shade900),
@@ -176,7 +176,7 @@ class _WorkShopScreenState extends State<WorkShopScreen> {
                                 ),
                               ),
                             ),
-                            Text("RECENT\nSERVICE")
+                            const Text("RECENT\nSERVICE")
                           ],
                         ),
                       ),
@@ -202,7 +202,7 @@ class _WorkShopScreenState extends State<WorkShopScreen> {
                   ElevatedButton(
                       onPressed: () {
                         if (status == false) {
-                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                               backgroundColor: Colors.red,
                               content: Text("Complete show room details!")));
                         } else {
@@ -258,7 +258,7 @@ class _WorkShopScreenState extends State<WorkShopScreen> {
                                         Navigator.pop(context);
                                         Navigator.pop(context);
                                         ScaffoldMessenger.of(context)
-                                            .showSnackBar(SnackBar(
+                                            .showSnackBar(const SnackBar(
                                                 backgroundColor: Colors.green,
                                                 content: Text(
                                                     "Taken back succesfully!")));
@@ -270,7 +270,7 @@ class _WorkShopScreenState extends State<WorkShopScreen> {
                           );
                         }
                       },
-                      child: Text("TAKE BACK"))
+                      child: const Text("TAKE BACK"))
                 ],
               ),
             ),
@@ -319,7 +319,7 @@ class _WorkShopScreenState extends State<WorkShopScreen> {
       }
     }
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
+      const SnackBar(
           backgroundColor: Colors.red,
           content: Text("No recent service has been made!")),
     );

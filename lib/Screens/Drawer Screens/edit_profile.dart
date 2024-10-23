@@ -1,5 +1,4 @@
 import 'dart:io';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -11,7 +10,7 @@ import 'package:rentel_round/Services/auth_services.dart';
 
 class EditProfile extends StatefulWidget {
   final Auth auth;
-  EditProfile({required this.auth, super.key});
+  const EditProfile({required this.auth, super.key});
 
   @override
   State<EditProfile> createState() => _EditProfileState();
@@ -63,7 +62,7 @@ class _EditProfileState extends State<EditProfile> {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         centerTitle: true,
-        title: Text(
+        title: const Text(
           "EDIT YOUR SHOP DETAILS",
           style: TextStyle(fontFamily: "fredoka"),
         ),
@@ -72,7 +71,7 @@ class _EditProfileState extends State<EditProfile> {
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              icon: Icon(Icons.close)),
+              icon: const Icon(Icons.close)),
         ],
       ),
       body: Form(
@@ -192,7 +191,7 @@ class _EditProfileState extends State<EditProfile> {
                           );
                           await AuthServices().updateUser(auth);
                           await AuthServices().getUser("USER");
-                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                               backgroundColor: Colors.blue,
                               content: Text("User profile edited!")));
                           Navigator.pushAndRemoveUntil(

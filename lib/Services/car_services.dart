@@ -4,7 +4,7 @@ import '../Models/car_model.dart';
 import '../Notification/notificationServices.dart';
 
 class CarServices {
-  final NotificationServices notificationServices = NotificationServices();
+  // final NotificationServices notificationServices = NotificationServices();
   Box<Cars>? _carBox;
   Box<Cars>? _availableCarBox;
   Box<Cars>? _onHoldCarBox;
@@ -225,17 +225,17 @@ class CarServices {
     }
   }
 
-  Future<void> checkPollutionDates() async {
-    await openBox();
-    final currentTime = DateTime.now();
-    for (var car in _carBox!.values) {
-      if (car.pollutionDate.isBefore(currentTime)) {
-        await notificationServices.showNotification(
-            id: car.hashCode,
-            title: "Pollution certificate expired",
-            body:
-                "${car.vehicleNo} ${car.brandName} ${car.carName}'s pollution is expired");
-      }
-    }
-  }
+  // Future<void> checkPollutionDates() async {
+  //   await openBox();
+  //   final currentTime = DateTime.now();
+  //   for (var car in _carBox!.values) {
+  //     if (car.pollutionDate.isBefore(currentTime)) {
+  //       await notificationServices.showNotification(
+  //           id: car.hashCode,
+  //           title: "Pollution certificate expired",
+  //           body:
+  //               "${car.vehicleNo} ${car.brandName} ${car.carName}'s pollution is expired");
+  //     }
+  //   }
+  // }
 }

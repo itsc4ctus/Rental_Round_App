@@ -138,16 +138,16 @@ class StatusServices {
     await completedStatusBox!.clear();
   }
 
-  Future<void> expiredCustomerNotification() async {
-    await openBox();
-    final currentTime = DateTime.now();
-    for (var status in statusBox!.values) {
-      if (status.endDate.isBefore(currentTime)) {
-        await NotificationServices().showNotification(
-            id: status.hashCode,
-            title: "Rental period over",
-            body: "Rental period of ${status.cName} is over!");
-      }
-    }
-  }
+  // Future<void> expiredCustomerNotification() async {
+  //   await openBox();
+  //   final currentTime = DateTime.now();
+  //   for (var status in statusBox!.values) {
+  //     if (status.endDate.isBefore(currentTime)) {
+  //       await NotificationServices().showNotification(
+  //           id: status.hashCode,
+  //           title: "Rental period over",
+  //           body: "Rental period of ${status.cName} is over!");
+  //     }
+  //   }
+  // }
 }

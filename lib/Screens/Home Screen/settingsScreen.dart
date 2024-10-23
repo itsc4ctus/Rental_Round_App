@@ -20,7 +20,7 @@ import '../Drawer Screens/privacy_policy.dart';
 
 class SettingsScreen extends StatefulWidget {
   final Auth userProfile;
-  SettingsScreen({required this.userProfile, super.key});
+  const SettingsScreen({required this.userProfile, super.key});
 
   @override
   State<SettingsScreen> createState() => _SettingsScreenState();
@@ -55,22 +55,22 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     optionName: "User Profile",
                     page: ProfileScreen(auth: widget.userProfile),
                   ),
-                  SettingsOptionCard(
+                  const SettingsOptionCard(
                     icon: Icons.privacy_tip_outlined,
                     optionName: "Privacy Policy",
                     page: PrivacyPolicy(),
                   ),
-                  SettingsOptionCard(
+                  const SettingsOptionCard(
                     icon: Icons.contact_page_sharp,
                     optionName: "Terms And Conditions",
                     page: TermsAndConditions(),
                   ),
-                  SettingsOptionCard(
+                  const SettingsOptionCard(
                     icon: Icons.help_outline,
                     optionName: "FAQ",
                     page: FaqScreen(),
                   ),
-                  SettingsOptionCard(
+                  const SettingsOptionCard(
                     icon: Icons.info_outline,
                     optionName: "About Us",
                     page: AboutApp(),
@@ -113,13 +113,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => NewToHome()));
+                                builder: (context) => const NewToHome()));
                       }, context);
                     },
                     child: const Text("LOGOUT"),
                   ),
                   const SizedBox(height: 10),
                   const Text("Rental Round"),
+                  const Text("version: 1.0.0+1"),
                   const Text("All Copyrights Reserved ©"),
                 ],
               ),
@@ -174,7 +175,7 @@ class ContactOptionCard extends StatelessWidget {
   final String optionName;
   final Function call;
   final IconData icon;
-  ContactOptionCard({
+  const ContactOptionCard({
     required this.optionName,
     required this.call,
     required this.icon,
@@ -206,7 +207,7 @@ class SettingsOptionCard extends StatelessWidget {
   final String optionName;
   final Widget page;
   final IconData icon;
-  SettingsOptionCard({
+  const SettingsOptionCard({
     required this.optionName,
     required this.page,
     required this.icon,

@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 
 class PrivacyPolicy extends StatefulWidget {
-  PrivacyPolicy({super.key});
+  const PrivacyPolicy({super.key});
 
   @override
   State<PrivacyPolicy> createState() => _PrivacyPolicyState();
@@ -35,7 +35,7 @@ class _PrivacyPolicyState extends State<PrivacyPolicy> {
       ),
       body: SafeArea(
           child: markDown == null
-              ? Center(
+              ? const Center(
                   child: CircularProgressIndicator(),
                 )
               : Padding(

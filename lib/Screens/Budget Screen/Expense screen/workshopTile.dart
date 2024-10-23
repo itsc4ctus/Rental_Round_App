@@ -76,6 +76,5 @@ class _WorkShoptileState extends State<WorkShoptile> {
         ),
       ),
     );
-    ;
   }
 }

@@ -1,18 +1,14 @@
 import 'dart:io';
 
 import 'package:file_picker/file_picker.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:rentel_round/Authentication/Screens/Sign-Up/signupfeild.dart';
-import 'package:rentel_round/Authentication/Screens/login_page.dart';
-import 'package:rentel_round/Authentication/Screens/new_to_app.dart';
 import 'package:rentel_round/Models/auth_model.dart';
 import 'package:rentel_round/Screens/Navbar%20Screen/navbar.dart';
 import 'package:rentel_round/Services/auth_services.dart';
-import 'package:rentel_round/Services/car_services.dart';
 
 class AddProfile extends StatefulWidget {
   const AddProfile({super.key});
@@ -76,7 +72,7 @@ class _AddProfileState extends State<AddProfile> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text(
+        title: const Text(
           "OPEN YOUR SHOP",
           style: TextStyle(fontFamily: "fredoka"),
         ),

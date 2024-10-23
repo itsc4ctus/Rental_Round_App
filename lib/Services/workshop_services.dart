@@ -83,7 +83,7 @@ class WorkshopServices {
       await openBox();
     }
     for (var key in completedWork!.keys) {
-      final work = await completedWork!.get(key) as WorKShopModel;
+      final work = completedWork!.get(key) as WorKShopModel;
       if (work.car.vehicleNo == vehicleNo) {
         await completedWork!.put(key, workshop);
         break;

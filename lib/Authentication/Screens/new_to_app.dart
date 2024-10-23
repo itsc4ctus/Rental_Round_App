@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:rentel_round/Authentication/Screens/enter_profile.dart';
-import 'package:rentel_round/Authentication/Screens/signup_page.dart';
-import 'package:rentel_round/Models/auth_model.dart';
-import 'package:rentel_round/Screens/Navbar%20Screen/navbar.dart';
-import 'package:rentel_round/Services/auth_services.dart';
 
 class NewToHome extends StatefulWidget {
   const NewToHome({super.key});
@@ -33,7 +29,7 @@ class _NewToHomeState extends State<NewToHome> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text("WELCOME TO RENTAL ROUND,"),
+                  const Text("WELCOME TO RENTAL ROUND,"),
                   Text(
                     "RENTAL\nROUND",
                     textAlign: TextAlign.center,
@@ -42,12 +38,12 @@ class _NewToHomeState extends State<NewToHome> {
                         color: Colors.blue.shade900,
                         fontFamily: "jaro"),
                   ),
-                  Container(
+                  SizedBox(
                     height: screenHeigth * 0.35,
                     width: screenWidth * 0.95,
                     child: Lottie.asset('lib/assets/animations/car.json'),
                   ),
-                  Text("Enter your details to get started."),
+                  const Text("Enter your details to get started."),
                   ElevatedButton(
                     onPressed: () {
                       Navigator.push(

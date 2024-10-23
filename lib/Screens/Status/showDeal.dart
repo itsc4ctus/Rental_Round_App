@@ -147,7 +147,7 @@ class _ShowDealState extends State<ShowDeal> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         const Text("Number of Days"),
-                        Text(": ${noOfDays}"),
+                        Text(": $noOfDays"),
                       ],
                     ),
                   ),
@@ -188,7 +188,7 @@ class _ShowDealState extends State<ShowDeal> {
                       children: [
                         Column(
                           children: [
-                            Text("Extra KM Driven"),
+                            const Text("Extra KM Driven"),
                             Text("(${noOfDays * 100}KM is free)")
                           ],
                         ),

@@ -68,7 +68,7 @@ class _CarScreenState extends State<CarScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("RENTEL ROUND"),
+        title: const Text("RENTEL ROUND"),
         centerTitle: true,
         actions: [
           IconButton(

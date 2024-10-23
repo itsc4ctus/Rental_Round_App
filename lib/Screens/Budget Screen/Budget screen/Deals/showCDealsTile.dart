@@ -20,7 +20,7 @@ class ShowCDealsTile extends StatefulWidget {
   final status completedCustomer;
   final int amountRecieved;
 
-  ShowCDealsTile({
+  const ShowCDealsTile({
     required this.cName,
     required this.cId,
     required this.startDate,

@@ -68,7 +68,7 @@ class _ViewCompletedWorkState extends State<ViewCompletedWork> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "${widget.garageName}",
+                            widget.garageName,
                             style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
@@ -78,7 +78,7 @@ class _ViewCompletedWorkState extends State<ViewCompletedWork> {
                           const SizedBox(height: 5),
                           Text(
                             "$phoneNumber",
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 16,
                               color: Colors.blueGrey,
                             ),
@@ -130,7 +130,7 @@ class _ViewCompletedWorkState extends State<ViewCompletedWork> {
                           borderRadius: BorderRadius.circular(12),
                           child: kIsWeb
                               ? Container(
-                                  child: Icon(Icons.image),
+                                  child: const Icon(Icons.image),
                                 )
                               : (Image.file(
                                   File(widget.billImage),

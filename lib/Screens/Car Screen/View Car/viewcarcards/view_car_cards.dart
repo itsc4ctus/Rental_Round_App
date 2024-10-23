@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ViewCarCards {
@@ -43,7 +42,7 @@ class ViewCarCards {
             ),
           ),
           Text(
-            "$value",
+            value,
             style: const TextStyle(
               fontSize: 16,
               color: Color(0xFF1E40AF),

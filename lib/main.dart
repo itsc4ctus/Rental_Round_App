@@ -24,11 +24,11 @@ void callBackDispatcher() async {
 
     CarServices carServices = CarServices();
     await carServices.openBox();
-    await carServices.checkPollutionDates();
+    // await carServices.checkPollutionDates();
 
     StatusServices statusServices = StatusServices();
     await statusServices.openBox();
-    await statusServices.expiredCustomerNotification();
+    // await statusServices.expiredCustomerNotification();
 
     return Future.value(true);
   });
@@ -44,17 +44,17 @@ void main() async {
   Hive.registerAdapter(WorKShopModelAdapter());
   // await AuthServices().openBox();
   await CarServices().openBox();
-  await CarServices().checkPollutionDates();
-  await StatusServices().expiredCustomerNotification();
+  // await CarServices().checkPollutionDates();
+  // await StatusServices().expiredCustomerNotification();
   await StatusServices().openBox();
   await ExpenceServices().openBox();
   await WorkshopServices().openBox();
-  await NotificationServices().initNotification();
+  // await NotificationServices().initNotification();
   if (!kIsWeb) {
     await Workmanager().initialize(callBackDispatcher, isInDebugMode: true);
     await Workmanager().registerPeriodicTask(
         "pollutionCheckTask", "pollutionCheck",
-        frequency: Duration(minutes: 15));
+        frequency: const Duration(minutes: 15));
   }
 
   runApp(const MyApp());

@@ -41,7 +41,7 @@ class CarActions {
     } else {
       await CarServices().deleteCar(vehicleNo);
       await CarServices().deleteAvailableCar(vehicleNo);
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
           backgroundColor: Colors.red,
           content: Text("Car deleted succesfully!")));
     }

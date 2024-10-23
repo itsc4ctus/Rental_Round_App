@@ -69,7 +69,7 @@ class ViewCarTiles {
     ];
     return Text(
       "${dateTime.day} - ${months[dateTime.month - 1]} - ${dateTime.year}",
-      style: TextStyle(
+      style: const TextStyle(
         fontSize: 16,
       ),
     );
@@ -92,7 +92,7 @@ class ViewCarTiles {
     ];
     return Text(
       "${dateTime.day} - ${months[dateTime.month - 1]} - ${dateTime.year}",
-      style: TextStyle(
+      style: const TextStyle(
         fontSize: 12,
       ),
     );

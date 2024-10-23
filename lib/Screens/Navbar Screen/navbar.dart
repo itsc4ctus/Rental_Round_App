@@ -11,7 +11,7 @@ import '../Home Screen/home_page.dart';
 class NavBar extends StatefulWidget {
   final int index;
   final Auth auth;
-  NavBar({required this.auth, super.key, this.index = 0});
+  const NavBar({required this.auth, super.key, this.index = 0});
 
   @override
   State<NavBar> createState() => _NavBarState();
@@ -52,18 +52,18 @@ class _NavBarState extends State<NavBar> {
             context: context,
             builder: (context) {
               return AlertDialog(
-                title: Text("Confirm exit?"),
+                title: const Text("Confirm exit?"),
                 actions: [
                   ElevatedButton(
                       onPressed: () {
                         Navigator.of(context).pop(false);
                       },
-                      child: Text("CANCEL")),
+                      child: const Text("CANCEL")),
                   ElevatedButton(
                       onPressed: () {
                         Navigator.of(context).pop(true);
                       },
-                      child: Text("OK"))
+                      child: const Text("OK"))
                 ],
               );
             });

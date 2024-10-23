@@ -272,7 +272,7 @@ class _EditScreenCustomerState extends State<EditScreenCustomer> {
                   Row(
                     children: [
                       const Text("Click to Extend End Date:"),
-                      SizedBox(
+                      const SizedBox(
                         width: 10,
                       ),
                       ElevatedButton(
@@ -286,7 +286,7 @@ class _EditScreenCustomerState extends State<EditScreenCustomer> {
                               return SizedBox(
                                 height: 250,
                                 child: CupertinoDatePicker(
-                                  minimumDate: dateNow.add(Duration(days: 1)),
+                                  minimumDate: dateNow.add(const Duration(days: 1)),
                                   initialDateTime: lastdateTime,
                                   onDateTimeChanged: (DateTime newDate) {
                                     setState(() {

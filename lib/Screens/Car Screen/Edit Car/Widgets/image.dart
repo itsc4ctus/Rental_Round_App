@@ -17,7 +17,7 @@ class EditCarImage extends StatelessWidget {
     var screenSize = MediaQuery.of(context).size;
     double screenHeight = screenSize.height;
     double screenWidth = screenSize.width;
-    return Container(
+    return SizedBox(
       width: screenWidth * 0.3,
       child: ClipRRect(
           borderRadius: BorderRadius.circular(10),

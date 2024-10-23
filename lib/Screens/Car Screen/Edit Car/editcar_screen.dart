@@ -101,7 +101,7 @@ class _EditCarScreenState extends State<EditCarScreen> {
                   Navigator.pop(context);
                 }, context);
               },
-              icon: Icon(Icons.close))
+              icon: const Icon(Icons.close))
         ],
       ),
       body: Center(
@@ -159,11 +159,11 @@ class _EditCarScreenState extends State<EditCarScreen> {
                     decoration: InputDecoration(
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10)),
-                      hintStyle: TextStyle(
+                      hintStyle: const TextStyle(
                         fontFamily: 'Roboto',
                       ),
                       hintText: "enter your car name",
-                      label: Text(
+                      label: const Text(
                         "car name",
                         style: TextStyle(fontFamily: "Roboto"),
                       ),

@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 
 class TermsAndConditions extends StatefulWidget {
-  TermsAndConditions({super.key});
+  const TermsAndConditions({super.key});
 
   @override
   State<TermsAndConditions> createState() => _TermsAndConditionsState();
@@ -35,7 +35,7 @@ class _TermsAndConditionsState extends State<TermsAndConditions> {
       ),
       body: SafeArea(
           child: markDown == null
-              ? Center(
+              ? const Center(
                   child: CircularProgressIndicator(),
                 )
               : Padding(

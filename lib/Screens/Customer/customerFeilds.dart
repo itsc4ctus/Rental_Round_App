@@ -37,7 +37,7 @@ class CustomerFeilds {
           fontFamily: 'Roboto',
         ),
         hintText: hinttext,
-        prefixIcon: Icon(Icons.currency_rupee),
+        prefixIcon: const Icon(Icons.currency_rupee),
         label: Text(
           label,
           style: const TextStyle(fontFamily: "Roboto"),
